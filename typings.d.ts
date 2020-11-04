@@ -76,7 +76,7 @@ declare module '@redux-offline/redux-offline/lib/types' {
     defaultCommit: { type: string };
     defaultRollback: { type: string };
     detectNetwork: (callback: NetworkCallback) => void;
-    discard: (error: any, action: OfflineAction, retries: number) => boolean;
+    discard: (error: any, action: OfflineAction, retries: number) => boolean | Promise<boolean>;
     effect: (effect: any, action: OfflineAction) => Promise<any>;
     offlineStateLens: (
       state: any,

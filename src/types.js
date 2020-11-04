@@ -91,7 +91,11 @@ export type Config = {
   persist: (store: any, options: {}, callback: () => void) => any,
   effect: (effect: any, action: OfflineAction) => Promise<*>,
   retry: (action: OfflineAction, retries: number) => ?number,
-  discard: (error: any, action: OfflineAction, retries: number) => boolean,
+  discard: (
+    error: any,
+    action: OfflineAction,
+    retries: number
+  ) => boolean | Promise<boolean>,
   persistOptions: {},
   persistCallback: (callback: any) => any,
   defaultCommit: DefaultAction,
